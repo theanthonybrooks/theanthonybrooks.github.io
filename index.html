@@ -1,12 +1,351 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The Street Art List - Newsletter Archive</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+  
  
+ <style type="text/css">
+     nav {
+      background-color: rgba(0, 0, 0, 0); /* Transparent background */
+      padding: 15px;
+      text-align: right;
+      position: relative;
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    nav a {
+      color: #000; /* Black text color */
+      font-weight: 800;
+      text-decoration: none;
+      margin: 0 15px;
+      }
+      
+   .menu-links {
+      display: none; /* Hide by default */
+      text-align: center;
+      margin-top: 20vh;
+    }
+
+      
+   .logo-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 20px;
+    }
+
+    .logo-container img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%; /* Make the image a perfect circle */
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fcef55;
+      font-family: 'Space Mono', monospace;
+    }
+
+    #archive-body {
+      display: flex;
+      flex-direction: column; /* Make the container a column layout */
+      align-items: center; /* Center content horizontally */
+      min-height: 100vh; /*set a min height to take up the full viewport*/
+    }
+
+    #logo img{
+    
+      /*width: 100%;*/
+      height: auto; /* Adjust the height as needed */
+      display: block;
+      margin: 0 auto; /* Center the img horizontally, if needed*/
+    }
+
+    #signup-text {
+      margin: 20px auto 40px;
+      /*max-width: 60%; commented out as it's not currently necessary*/
+      color: #000;
+      font-family: 'Space Mono', monospace;
+      text-align: center;
+    }
+    
+        #signup-maintext {
+      margin: 20px auto 0px;
+      max-width: 75%; /*commented out as it's not currently necessary*/
+      font-weight: 700;
+      font-size: larger;
+    }
+    
+        #signup-subtext {
+      margin: 5px auto 40px;
+      /*max-width: 60%; commented out as it's not currently necessary*/
+      color: #000;
+      font-family: 'Space Mono', monospace;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 30px;
+      margin-bottom: 5px;
+      color: #000;
+      font-family: 'Space Mono', monospace;
+    }
+
+    input {
+      padding: 10px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      border-radius: 15px;
+      margin: 0 auto; /* Center the input */
+      font-family: 'Space Mono', monospace;
+    }
+
+    #subscribe-button {
+      margin-top: 30px;
+    }
+
+    .button {
+    width: 12em;
+      padding: 10px 30px;
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #000;
+      font-size: 0.875em;
+      font-weight: bold;
+      border-radius: 15px; /* Adjust as needed */
+      box-shadow: -5px 5px 0px 0px #000; /* Hard shadow with no blur */
+      font-family: 'Space Mono', monospace;
+      transition: box-shadow 0.3s, background-color 0.3s; /*Smooth transition*/
+      cursor: pointer; /* Add this line to set the hand cursor on hover */
+    }
+    
+    .button:hover {
+    	box-shadow: -3px 3px 0px #000; /*smaller shadow on hover*/
+        background-color: #000000; /* black color on hover*/
+      	color: #fcef55; /* font color*/
+    	border: 2px solid #fcef55; /* yellow border*/
+    }
+   .error {
+     color: #FF0000;
+     font-weight: bold;
+     font-size: 11px;
+   }
+    
+        /* Footer styles */
+    #social-links {
+      margin-top: 90px;
+      text-align: center;
+    }
+    
+   #archive-list {
+     margin: 3em;
+     list-style: square;
+     line-height: 1.6em;
+   }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .social-icons img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .social-icons a:hover img {
+      transform: scale(1.2); /* Scale up on hover */
+    }
+    
+    /* Adjust the button width for HD screens */
+	@media screen and (max-width: 3000px) {
+  	#header-image img{
+    max-width: 90%;
+    /*margin-top: 1em;*/
+    }
+   	input {
+      width: 50%;
+      }
+  }
+  
+      /* Adjust the button width for HD screens */
+	@media screen and (max-width: 2000px) {
+  	#header-image img{
+    max-width: 90%;
+    /*margin-top: 10em;*/
+    }
+   	input {
+      width: 50%;
+      }
+  }
+      /* Adjust the button width for normal screens */
+	@media screen and (max-width: 1700px) {
+  	#header-image img{
+    max-width: 90%;
+    /*margin-top: 1em;*/
+    }
+    input {
+        width: 50%;
+      }
+  }
+    /* Adjust the button width for smaller screens */
+	@media screen and (max-width: 600px) {
+  	#header-image img{
+    max-width: 100%; /* Set a full width for smaller screens */
+    margin: 0 auto;
+    /*margin-top: 4em;*/
+  }
+      input {
+        width: 90%;
+      }
+}
+
+    /* Hamburger menu styles */
+    .menu-icon {
+      display: none; /* Hide by default on larger screens */
+      cursor: pointer;
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      z-index: 2;
+    }
+
+    .menu-icon div {
+      width: 30px;
+      height: 3px;
+      background-color: #000;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    @media screen and (max-width: 600px) {
+      nav a {
+        display: none; /* Hide navigation links by default on smaller screens */
+      }
+
+      .menu-icon {
+        display: block; /* Show the hamburger icon on smaller screens */
+      }
+
+      .menu-icon.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .menu-icon.active div:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-icon.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+      body.menu-open {
+        background-color: rgba(252, 239, 85, 0.9);
+      }
+      
+      body.menu-open .menu-links {
+      display: block; /* Show when the menu is open */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  	  }	
+      
+          body.menu-open .menu-links a {
+      display: block;
+      font-size: 28px;
+      line-height: 2.0;
+      color: #000;
+      text-decoration: none;
+   	 }
+
+      nav a {
+        display: none; /* Hide navigation links by default on smaller screens */
+      }
+
+      
+      nav a, 
+      .menu-links a {
+      	display: none; /* hide nav and menu links on smaller screen by default*/
+      }
+      body.menu-open nav a,
+        body.menu-open .menu-links a {
+        font-size: 28px;
+        line-height: 2.0;
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+
 <body>
-  <h1>Anthony Brooks</h1>
-  <p>Where everything is binary</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
- <br>
- <a href="/test.html">Test link</a>
- <a href="/vizionmaglink.html">Vizion link</a>
-</body>
+  <div id="archive-body">
+<nav>
+  <a href="https://bit.ly/streetartfests" target="_blank">The List</a>
+  <a href="https://instagram.com/thestreetartlist" target="_blank">Instagram</a>
+  <a href="mailto:streetartlist@theanthonybrooks.com">Contact</a>
+  <div class="logo-container">
+    <img src="https://mcusercontent.com/fa6b0c41fcaaf67cc94a80740/images/0da4c742-83c6-fa72-a130-825f6d9db3d9.png" alt="SAL Logo">
+  </div>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</nav>
+    <div id="signup-text">
+      <p id="signup-maintext">View past newsletters!</p>
+      <p id="signup-subtext"><em>(They're sorted by date)</em></p>
+    </div>
+            <ul id="archive-list">
+	<script language="javascript" src="//theanthonybrooks.us8.list-manage.com/generate-js/?u=fa6b0c41fcaaf67cc94a80740&fid=23718&show=10" type="text/javascript"></script> 
+        </ul>
+
+    <div id="social-links" class="social-icons">
+      <a href="https://www.instagram.com/thestreetartlist" target="_blank">
+        <img src="https://cdn-images.mailchimp.com/icons/social-block-v3/block-icons-v3/instagram-filled-dark-40.png" alt="IG Icon">
+      </a>
+      <a href="https://www.threads.net/thestreetartlist" target="_blank">
+        <img src="https://cdn-images.mailchimp.com/icons/social-block-v3/block-icons-v3/threads-filled-dark-40.png" alt="Threads Icon">      
+      </a>
+      <a href="mailto:streetartlist@theanthonybrooks.com" target="_blank">
+        <img src="https://cdn-images.mailchimp.com/icons/social-block-v3/block-icons-v3/email-filled-dark-40.png" alt="Email Icon">
+      </a>
+
+    </div>
+
+  </div>
  
+
+
+<footer>
+</footer>
+  <script>
+    function toggleMenu() {
+      console.log("Toggle menu function executed");
+      var menuIcon = document.querySelector('.menu-icon');
+      menuIcon.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    }
+
+  </script>
+</body>
 </html>
