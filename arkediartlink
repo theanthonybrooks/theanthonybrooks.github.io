@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizion Magazine Redirect</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Replace 'your.email@example.com' with your actual email address
+        window.location.href = 'mailto:arkediart@arkedia.fr?subject=Arkédi'Art Submission';
+    </script>
+</body>
+</html>
